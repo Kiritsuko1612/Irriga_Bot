@@ -1049,7 +1049,7 @@
     background: none;
     border: none;
     padding: 6px;
-    z-index: 200;
+    z-index: 10000;
   }
   .nav-hamburger span {
     display: block;
@@ -1080,18 +1080,19 @@
       display: flex;
       flex-direction: column;
       position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(5,18,36,0.97);
-      backdrop-filter: blur(20px);
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: #051224;
       justify-content: center;
       align-items: center;
       gap: 2.5rem;
       opacity: 0;
+      visibility: hidden;
       pointer-events: none;
-      transition: opacity 0.3s ease;
-      z-index: 150;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 9999;
     }
-    nav ul.open { opacity: 1; pointer-events: all; }
+    nav ul.open { opacity: 1; visibility: visible; pointer-events: all; }
     nav ul a { font-size: 1.2rem; letter-spacing: 0.15em; }
     nav ul li:last-child a {
       font-size: 1rem;
