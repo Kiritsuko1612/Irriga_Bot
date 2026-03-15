@@ -1099,16 +1099,18 @@
     }
 
     /* Hero */
-    .hero-content { padding: 100px 6vw 0; }
-    .hero-title { font-size: clamp(3.5rem, 18vw, 6rem); margin-bottom: 1.2rem; }
+    .hero-content { padding: 90px 5vw 2rem; }
+    .hero-title { font-size: clamp(3rem, 17vw, 5.5rem); margin-bottom: 1.2rem; line-height: 0.92; }
     .hero-sub { font-size: 0.95rem; margin-bottom: 2rem; }
     .hero-btns { flex-direction: column; align-items: center; gap: 0.75rem; }
     .btn-primary, .btn-outline { width: 100%; max-width: 320px; text-align: center; padding: 14px 20px; }
-    .hero-stats { position: relative; flex-wrap: wrap; gap: 1rem; padding: 20px 5vw; }
-    .hero-stat { flex: 1 1 45%; }
+    .hero-stats { position: relative; flex-wrap: wrap; gap: 0; padding: 0; border-top: 1px solid var(--borda-sutil); }
+    .hero-stat { flex: 1 1 50%; border-right: 1px solid var(--borda-sutil); border-bottom: 1px solid var(--borda-sutil); padding: 16px 12px; }
+    .hero-stat:nth-child(2n) { border-right: none; }
+    .hero-stat-num { font-size: 1.6rem; }
 
     /* Seções — padding menor */
-    section { padding: 4rem 5vw; }
+    section { padding: 3.5rem 5vw; }
 
     /* Grids → coluna única */
     .problema-inner,
@@ -1118,12 +1120,23 @@
     .func-grid,
     .ods-grid,
     .dif-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .team-grid { grid-template-columns: 1fr; }
+    .team-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+    /* Stat cards */
+    .stat-big { font-size: 2.8rem; }
+    .stats-grid { gap: 2px; }
+
+    /* Quote block */
+    .quote-block { padding: 2rem 1.2rem; margin: 2rem auto; }
+    .quote-text { font-size: clamp(1rem, 4.5vw, 1.4rem); }
+
+    /* Produto WhatsApp mock */
+    .produto-visual { padding: 24px; }
 
     /* Carrossel */
-    .carousel { max-width: 90vw; border-radius: 12px; }
-    .carousel-slide { max-height: 70vh; }
-    .carousel-btn { width: 36px; height: 36px; font-size: 0.9rem; }
+    .carousel { max-width: 92vw; border-radius: 12px; margin: 0 auto; }
+    .carousel-slide { max-height: 68vh; }
+    .carousel-btn { width: 40px; height: 40px; font-size: 1rem; }
     .carousel-btn.prev { left: 10px; }
     .carousel-btn.next { right: 10px; }
     .carousel-counter { font-size: 0.68rem; padding: 3px 10px; top: 12px; right: 12px; }
@@ -1131,14 +1144,46 @@
     .carousel-caption span { font-size: 0.7rem; }
     .carousel-caption p { font-size: 0.95rem; }
 
-    /* Funil TAM/SAM/SOM */
-    .funil-item { padding-left: 16px !important; padding-right: 16px !important; }
+    /* Funil TAM/SAM/SOM — remove clip-path no mobile */
+    .funil-item {
+      clip-path: none !important;
+      padding: 20px 16px !important;
+      border-radius: 4px;
+      border: 1px solid var(--borda-sutil);
+    }
+    .funil-tam { background: var(--fundo-claro); }
+    .funil-sam { background: #0b2650; }
+    .funil-som { background: #0f3060; }
     .funil-label { font-size: 0.65rem; }
-    .funil-value { font-size: 1.6rem; }
+    .funil-val { font-size: 1.4rem; }
+
+    /* Preco destaque */
+    .preco-valor { font-size: 2.2rem; }
+
+    /* Parceiros */
+    .parceiro { padding: 14px 20px; font-size: 0.78rem; }
+
+    /* TRL badge */
+    .trl-badge { padding: 10px 18px; }
+    .trl-num { font-size: 1.5rem; }
 
     /* Textos */
-    .section-title { font-size: clamp(1.8rem, 7vw, 2.5rem); }
+    .section-title { font-size: clamp(1.6rem, 6.5vw, 2.4rem); }
     .section-label { font-size: 0.65rem; }
+    .section-body { font-size: 0.93rem; }
+
+    /* Func / ODS / Dif cards */
+    .func-card { padding: 28px 20px; }
+    .ods-card { padding: 28px 18px; }
+    .dif-card { padding: 24px 18px; }
+    .func-num { font-size: 3rem; }
+
+    /* Team cards */
+    .team-card { padding: 24px 16px; }
+    .team-photo { width: 80px; height: 80px; }
+
+    /* CTA */
+    #contato { padding: 80px 5vw; }
 
     /* Footer */
     footer { flex-direction: column; gap: 1rem; text-align: center; }
@@ -1148,13 +1193,20 @@
 
   /* ── RESPONSIVO MOBILE PEQUENO ── */
   @media (max-width: 420px) {
-    .hero-title { font-size: clamp(3rem, 20vw, 4.5rem); }
+    .hero-title { font-size: clamp(2.8rem, 19vw, 4rem); }
     .func-grid,
     .ods-grid,
     .dif-grid { grid-template-columns: 1fr; }
-    .hero-stat { flex: 1 1 100%; }
-    .carousel { max-width: 95vw; }
-    .carousel-slide { max-height: 75vh; }
+    .team-grid { grid-template-columns: 1fr; }
+    .hero-stat { flex: 1 1 50%; }
+    .hero-stat-num { font-size: 1.4rem; }
+    .carousel { max-width: 96vw; }
+    .carousel-slide { max-height: 72vh; }
+    .stat-big { font-size: 2.4rem; }
+    .quote-block { padding: 1.5rem 1rem; }
+    .funil-val { font-size: 1.2rem; }
+    .preco-valor { font-size: 1.9rem; }
+    .projecao-val { font-size: 1.5rem; }
   }
 </style>
 </head>
