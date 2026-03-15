@@ -1099,7 +1099,7 @@
     }
 
     /* Hero — empilha conteúdo + stats verticalmente */
-    #hero { flex-direction: column; justify-content: flex-start; align-items: stretch; padding-top: 0; }
+    #hero { flex-direction: column; justify-content: flex-start; align-items: stretch; padding-top: 0; min-height: unset; }
     .hero-content { padding: 90px 5vw 2rem; width: 100%; max-width: 100%; }
     .hero-title { font-size: clamp(1.8rem, 10vw, 3.2rem); margin-bottom: 1.2rem; line-height: 0.92; }
     .hero-badge { font-size: 0.62rem; letter-spacing: 0.1em; padding: 5px 14px; }
@@ -1145,7 +1145,8 @@
     .stats-grid { gap: 2px; }
 
     /* Quote block */
-    .quote-block { padding: 2rem 1.2rem; margin: 2rem auto; }
+    .quote-block { padding: 3.5rem 1.2rem 2rem; margin: 2rem auto; }
+    .quote-block::before { font-size: 2.5rem; top: 10px; left: 16px; }
     .quote-text { font-size: clamp(1rem, 4.5vw, 1.4rem); }
 
     /* Produto WhatsApp mock */
@@ -1221,7 +1222,7 @@
     .carousel { max-width: 96vw; }
     .carousel-slide { max-height: 72vh; }
     .stat-big { font-size: 2.4rem; }
-    .quote-block { padding: 1.5rem 1rem; }
+    .quote-block { padding: 3rem 1rem 1.5rem; }
     .funil-val { font-size: 1.2rem; }
     .preco-valor { font-size: 1.9rem; }
     .projecao-val { font-size: 1.5rem; }
