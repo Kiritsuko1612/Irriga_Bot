@@ -548,7 +548,6 @@
   .funil { display: flex; flex-direction: column; gap: 0; }
 
   .funil-item {
-    padding: 28px 32px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -557,9 +556,9 @@
   }
   .funil-item:hover { transform: translateX(8px); }
 
-  .funil-tam { background: var(--fundo-claro); clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%); padding-left: 24px; padding-right: 24px; }
-  .funil-sam { background: #0b2650; clip-path: polygon(6% 0, 94% 0, 89% 100%, 11% 100%); padding-left: 72px; padding-right: 72px; }
-  .funil-som { background: #0f3060; clip-path: polygon(11% 0, 89% 0, 84% 100%, 16% 100%); padding-left: 104px; padding-right: 104px; }
+  .funil-tam { background: var(--fundo-claro); clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%); padding: 28px 24px; }
+  .funil-sam { background: #0b2650; clip-path: polygon(6% 0, 94% 0, 89% 100%, 11% 100%); padding: 28px 72px; }
+  .funil-som { background: #0f3060; clip-path: polygon(11% 0, 89% 0, 84% 100%, 16% 100%); padding: 28px 104px; }
 
   .funil-label {
     font-family: var(--font-corpo);
@@ -1167,13 +1166,12 @@
     /* Funil TAM/SAM/SOM — remove clip-path no mobile */
     .funil-item {
       clip-path: none !important;
-      padding: 20px 16px !important;
       border-radius: 4px;
       border: 1px solid var(--borda-sutil);
     }
-    .funil-tam { background: var(--fundo-claro); }
-    .funil-sam { background: #0b2650; }
-    .funil-som { background: #0f3060; }
+    .funil-tam { background: var(--fundo-claro); padding: 20px 16px !important; }
+    .funil-sam { background: #0b2650; padding: 20px 16px !important; }
+    .funil-som { background: #0f3060; padding: 20px 16px !important; }
     .funil-label { font-size: 0.65rem; }
     .funil-val { font-size: 1.4rem; }
 
