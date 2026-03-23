@@ -534,98 +534,109 @@
     color: var(--texto-claro);
   }
 
-  /* ── MERCADO (FUNIL ATUALIZADO) ── */
-  #mercado { background: var(--fundo-medio); }
+  /* ── SEÇÃO MERCADO: DESIGN PREMIUM ── */
+  #mercado {
+    background: var(--fundo);
+    position: relative;
+    padding: 120px 5vw;
+  }
 
   .mercado-inner {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
     align-items: center;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
   }
 
-  .funil {
+  .funil-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
     width: 100%;
   }
 
-  .funil-item {
+  .funil-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 25px 20px;
-    text-align: center;
+    padding: 30px;
     border: 2px dashed;
-    position: relative;
-    transition: transform 0.3s ease;
+    border-radius: 8px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
   }
 
-  .funil-item:hover {
-    transform: scale(1.02);
+  .funil-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
   }
 
-  .funil-tam {
+  .card-tam {
     width: 100%;
-    border-color: #ff7e7e;
-    background: rgba(255, 126, 126, 0.05);
+    border-color: #FF5E78;
+    box-shadow: inset 0 0 20px rgba(255, 94, 120, 0.1);
   }
+  .card-tam .f-val { color: #FF5E78; text-shadow: 0 0 15px rgba(255, 94, 120, 0.4); }
 
-  .funil-sam {
+  .card-sam {
     width: 85%;
-    border-color: #f3d374;
-    background: rgba(243, 211, 116, 0.05);
+    border-color: #FFD369;
+    box-shadow: inset 0 0 20px rgba(255, 211, 105, 0.1);
   }
+  .card-sam .f-val { color: #FFD369; text-shadow: 0 0 15px rgba(255, 211, 105, 0.4); }
 
-  .funil-som {
+  .card-som {
     width: 70%;
-    border-color: #78e8f0;
+    border-color: var(--ciano);
     background: rgba(120, 232, 240, 0.05);
+    box-shadow: inset 0 0 25px rgba(120, 232, 240, 0.15);
   }
+  .card-som .f-val { color: var(--ciano); text-shadow: 0 0 20px rgba(120, 232, 240, 0.5); }
 
-  .funil-label {
-    font-family: var(--font-corpo);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
+  .f-label {
+    font-family: var(--font-titulo);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--branco);
-    margin-bottom: 5px;
+    margin-bottom: 4px;
   }
 
-  .funil-sublabel {
-    font-size: 0.65rem;
-    color: rgba(242, 242, 242, 0.6);
-    margin-bottom: 10px;
+  .f-sub {
+    font-size: 0.75rem;
+    color: var(--texto-claro);
+    margin-bottom: 15px;
+    font-weight: 400;
   }
 
-  .funil-val {
+  .f-val {
     font-family: var(--font-titulo);
-    font-size: 2.2rem;
+    font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 900;
-    color: var(--ciano);
     line-height: 1;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     .mercado-inner {
       grid-template-columns: 1fr;
       text-align: center;
+      gap: 50px;
     }
+    .section-body { margin: 0 auto; }
+  }
 
-    .funil-item {
-      width: 100% !important;
-      padding: 20px 10px;
-    }
-
-    .funil-val {
-      font-size: 1.8rem;
-    }
+  @media (max-width: 600px) {
+    .funil-card { width: 100% !important; padding: 20px; }
+    .f-val { font-size: 2.2rem; }
+    #mercado { padding: 60px 5vw; }
   }
 
   /* ── IMPACTO ODS ── */
@@ -1451,35 +1462,48 @@
 <!-- MERCADO -->
 <section id="mercado">
   <div class="mercado-inner">
+
     <div class="reveal">
-      <span class="section-label">Oportunidade</span>
-      <h2 class="section-title">Um mercado <em>bilionário</em> à espera da inovação</h2>
+      <span class="section-label">Market Sizing</span>
+      <h2 class="section-title">A oportunidade <em>em números</em></h2>
       <p class="section-body">
-        Focamos no pequeno produtor e nas cooperativas rurais, criando uma rede sustentável de usuários e parceiros engajados.
+        O IrrigaBot não resolve apenas um problema técnico, ele destrava um potencial produtivo represado em milhões de propriedades que hoje operam no modo manual.
       </p>
+
+      <div style="margin-top: 30px; display: flex; gap: 20px;" class="reveal">
+        <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 4px; flex: 1;">
+          <strong style="color: var(--ciano); display: block; font-size: 1.2rem;">+3.9M</strong>
+          <small style="color: var(--texto-claro);">Produtores Aptos</small>
+        </div>
+        <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 4px; flex: 1;">
+          <strong style="color: var(--ciano); display: block; font-size: 1.2rem;">Low Cost</strong>
+          <small style="color: var(--texto-claro);">Alta Conversão</small>
+        </div>
+      </div>
     </div>
 
-    <div class="funil reveal">
+    <div class="funil-container reveal">
 
-      <div class="funil-item funil-tam">
-        <span class="funil-label">TAM · Mercado Total</span>
-        <span class="funil-sublabel">Mercado de irrigação no Brasil · EMBRAPA</span>
-        <span class="funil-val">R$ 1,8Bi</span>
+      <div class="funil-card card-tam">
+        <span class="f-label">TAM · Mercado Total</span>
+        <span class="f-sub">Irrigação no Brasil (EMBRAPA)</span>
+        <span class="f-val">R$ 1,8Bi</span>
       </div>
 
-      <div class="funil-item funil-sam">
-        <span class="funil-label">SAM · Mercado Endereçável</span>
-        <span class="funil-sublabel">Produtores familiares com potencial de adoção</span>
-        <span class="funil-val">3,9M</span>
+      <div class="funil-card card-sam">
+        <span class="f-label">SAM · Mercado Endereçável</span>
+        <span class="f-sub">Agricultura Familiar Tecnificável</span>
+        <span class="f-val">3,9M</span>
       </div>
 
-      <div class="funil-item funil-som">
-        <span class="funil-label">SOM · Mercado Inicial</span>
-        <span class="funil-sublabel">Propriedades com infraestrutura básica</span>
-        <span class="funil-val">1,2M</span>
+      <div class="funil-card card-som">
+        <span class="f-label">SOM · Mercado Inicial</span>
+        <span class="f-sub">Foco: Região Sul e Sudeste</span>
+        <span class="f-val">1,2M</span>
       </div>
 
     </div>
+
   </div>
 </section>
 
